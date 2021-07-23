@@ -146,10 +146,10 @@ public class RelativeMouseInput implements MouseListener, MouseMotionListener, M
 		mouseMoved(e);
 	}
 	
-	private Point getComponentCenter() {
+	public Point getComponentCenter() {
 		int w = component.getWidth() / 2;
 		int h = component.getHeight() / 2;
-		return new Point((w / 2), (h / 2));
+		return new Point(w, h);
 	}
 	
 	private void centerMouse() {

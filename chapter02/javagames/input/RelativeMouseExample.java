@@ -160,6 +160,7 @@ public class RelativeMouseExample extends JFrame implements Runnable {
 		g.drawString("Relative: " + mouseInput.isRelative(), 20, 35);
 		g.drawString("Press Space to switch mouse modes", 20, 50);
 		g.drawString("Press C to toggle cursor visibility", 20, 65);
+		g.drawOval(mouseInput.getComponentCenter().x, mouseInput.getComponentCenter().y, 5, 5);
 		
 		g.setColor(Color.WHITE);
 		g.drawRect(point.x, point.y, 25, 25);
