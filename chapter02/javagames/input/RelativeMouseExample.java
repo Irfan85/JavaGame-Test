@@ -47,7 +47,7 @@ public class RelativeMouseExample extends JFrame implements Runnable {
 		keyboardInput = new KeyboardInput();
 		canvas.addKeyListener(keyboardInput);
 		
-		mouseInput = new RelativeMouseInput(canvas); // This parameter would be 'this for full screen mode
+		mouseInput = new RelativeMouseInput(canvas); // This parameter would be "this" for full screen mode
 		canvas.addMouseListener(mouseInput);
 		canvas.addMouseMotionListener(mouseInput);
 		canvas.addMouseWheelListener(mouseInput);
@@ -125,7 +125,7 @@ public class RelativeMouseExample extends JFrame implements Runnable {
 	}
 	
 	private void hideCursor() {
-		// Put an empty image container as a cursor. This will hide the ursor
+		// Put an empty image container as a cursor. This will hide the cursor
 		Toolkit toolkit = Toolkit.getDefaultToolkit(); // java.awt.Tooklit
 		Image image = toolkit.createImage(""); // An empty path means no image
 		Point point = new Point(0, 0);

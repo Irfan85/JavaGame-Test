@@ -163,6 +163,10 @@ public class PolarCoordinateExample extends JFrame implements Runnable {
 		// Putting the diameter of a sphere '2*r' will make sure the arc is drawn as a part of the sphere 
 		// Reference: https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/awt/Graphics.html#drawArc(int,int,int,int,int,int)
 		g.drawArc((int) (cx - r), (int) (cy - r), (int) (2*r), (int) (2*r), 0, (int) degrees);
+		
+		// This rectangle is drawn to demonstrate how the drawArc() method actually works
+		g.setColor(Color.RED);
+		g.drawRect((int) (cx - r), (int) (cy - r), (int) (2*r), (int) (2*r));
 	}
 	
 	private void onWindowClosing() {

@@ -91,18 +91,24 @@ public class DisplayModeExample extends JFrame {
 	}
 
 	public void onExitFullScreen() {
-		// Go back to the windowed display mode
-		graphicsDevice.setDisplayMode(currentDisplayMode);
-		graphicsDevice.setFullScreenWindow(null);
+		// At first check whether we are actually in full-screen mode or not
+		if(graphicsDevice.getFullScreenWindow() != null) {
+			// Go back to the windowed display mode
+			graphicsDevice.setDisplayMode(currentDisplayMode);
+			graphicsDevice.setFullScreenWindow(null);
+		} else {
+			System.out.println("Already in windowed mode.");
+		}
 	}
 
 	public DisplayMode getSelectedDisplayMode() {
-		DisplayModeWrapper selecteDisplayModeWrapper = (DisplayModeWrapper) displayModeComboBox.getSelectedItem();
-		DisplayMode displayMode = selecteDisplayModeWrapper.displayMode;
+		DisplayModeWrapper selectedDisplayModeWrapper = (DisplayModeWrapper) displayModeComboBox.getSelectedItem();
+		DisplayMode displayMode = selectedDisplayModeWrapper.displayMode;
 		return displayMode;
 	}
 
 	private void createAndShowGUI() {
+		// There are many ways to add swing components in a JFrame. This is just one of them.
 		Container container = getContentPane();
 		container.add(createMainPanel());
 		container.setIgnoreRepaint(true);

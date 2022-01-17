@@ -70,7 +70,7 @@ public class FullScreenRenderingExample extends JFrame implements Runnable {
 		// We will use a fixed display mode for simplicity and not fetching it
 		// from graphicsDevice. But that would be the recommended approach. Were just
 		// assuming this display mode is supported by the device
-		return new DisplayMode(1920, 1080, DisplayMode.BIT_DEPTH_MULTI, DisplayMode.REFRESH_RATE_UNKNOWN);
+		return new DisplayMode(1920, 1080, 32, DisplayMode.REFRESH_RATE_UNKNOWN);
 	}
 
 	private void shutDownApp() {

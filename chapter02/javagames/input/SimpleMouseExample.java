@@ -93,7 +93,7 @@ public class SimpleMouseExample extends JFrame implements Runnable {
 		keyboardInput.poll();
 		mouseInput.poll();
 		
-		// If mouseButton if pressed for the first time, start drawing
+		// If mouseButton is pressed for the first time, start drawing
 		if(mouseInput.buttonDownOnce(MouseEvent.BUTTON1))
 			isCurrentlyDrawingLine = true;
 		// If user is currently pressing down the button, keep drawing lines
