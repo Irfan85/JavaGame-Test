@@ -17,7 +17,7 @@ import javagames.util.Matrix3x3f;
 import javagames.util.RelativeMouseInput;
 import javagames.util.Vector2f;
 
-public class CanonExample extends JFrame implements Runnable {
+public class CannonExample extends JFrame implements Runnable {
 	private FrameRate frameRate;
 	private BufferStrategy bs;
 	private volatile boolean running;
@@ -43,7 +43,7 @@ public class CanonExample extends JFrame implements Runnable {
 		canvas.setIgnoreRepaint(true);
 		
 		getContentPane().add(canvas);
-		setTitle("Canon Example");
+		setTitle("Cannon Example");
 		setIgnoreRepaint(true);
 		pack();
 		
@@ -275,7 +275,7 @@ public class CanonExample extends JFrame implements Runnable {
 	}
 
 	public static void main(String[] args) {
-		final CanonExample app = new CanonExample();
+		final CannonExample app = new CannonExample();
 		app.addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowClosing(WindowEvent e) {
