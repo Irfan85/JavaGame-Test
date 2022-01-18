@@ -103,9 +103,9 @@ public class Matrix3x3f {
 				vec.x * this.m[0][1] +
 				vec.y * this.m[1][1] +
 				vec.w * this.m[2][1],
-				vec.x * this.m[0][0] +
-				vec.y * this.m[1][0] +
-				vec.w * this.m[2][0]
+				vec.x * this.m[0][2] +
+				vec.y * this.m[1][2] +
+				vec.w * this.m[2][2]
 		);
 	}
 
