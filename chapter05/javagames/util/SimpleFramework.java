@@ -38,14 +38,14 @@ public class SimpleFramework extends JFrame implements Runnable {
 	protected String appTitle = "Untitled Game";
 	protected int appWidth = 640;
 	protected int appHeight = 480;
-	protected float appBorderScale = 0.8f; // The ration of the canvas and JFrame when aspect ratio is being maintained
+	protected float appBorderScale = 0.8f; // The ratio of the canvas and JFrame when aspect ratio is being maintained
 	protected float appWorldWidth = 2.0f; // Our world will have a dimension of 2x2 units
 	protected float appWorldHeight = 2.0f;
 	protected long appSleepTime = 10; // The sleep between each iteration of the game loop
 	protected boolean appMaintainAspectRatio = false; // We're setting this false by default since in some circumstances, we may not need it. For example, when tha game window has fixed height and width
 	
 	protected Color appBackgroundColor = Color.BLACK; // Background color for the canvas;
-	protected Color appBorderColor = Color.LIGHT_GRAY; // The color of the gap between the canvas and the JFrame when the aspect ration is beging adjusted
+	protected Color appBorderColor = Color.LIGHT_GRAY; // The color of the gap between the canvas and the JFrame when the aspect ratio is beging adjusted
 	protected Color appFpsTextColor = Color.GREEN; // The color of the FPS text
 	protected Font appFont = new Font("Courier New", Font.PLAIN, 14); // The default font that we want to use in the game. We have to apply it in the components manually however
 	

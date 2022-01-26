@@ -43,6 +43,7 @@ public class SimpleFrameworkTemplate extends SimpleFramework {
 	protected void render(Graphics g) {
 		super.render(g);
 		
+		// Draw a circle at the center of the canvas
 		Vector2f circlePosition = getViewPortTransformMatrix().mul(new Vector2f(0, 0));
 		g.drawOval((int) circlePosition.x, (int) circlePosition.y, 20, 20);
 	}

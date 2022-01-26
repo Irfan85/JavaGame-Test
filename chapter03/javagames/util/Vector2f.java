@@ -48,4 +48,65 @@ public class Vector2f {
 		y = y + sy * x;
 		x = tmp;
 	}
+	
+	public Vector2f add(Vector2f v) {
+		return new Vector2f(x + v.x, y + v.y);
+	}
+	
+	public Vector2f sub(Vector2f v) {
+		return new Vector2f(x - v.x, y - v.y);
+	}
+	
+	// Multiplies the vector with a scalar
+	public Vector2f mul(float scalar) {
+		return new Vector2f(scalar * x, scalar * y);
+	}
+	
+	// Divides the vector by a scalar
+	public Vector2f div(float scalar) {
+		return new Vector2f(x / scalar, y / scalar);
+	}
+	
+	// Inverse the vector
+	public Vector2f inv() {
+		return new Vector2f(-x, -y);
+	}
+	
+	// Returns the length of the vector
+	public float len() {
+		return (float)Math.sqrt((x*x) + (y*y));
+	}
+	
+	// In computers sqrt operation is expensive. So when we just want to compare two vectors, we can just
+	// use it's squared length by which we will avoid doing sqrt
+	public float squaredLength() {
+		return (x*x) + (y*y);
+	}
+	
+	// Returns the norm(unit vector) of the vector
+	public Vector2f norm() {
+		return div(len());
+	}
+	
+	// Returns the perpendicular vector of the current vector
+	public Vector2f perpendicular() {
+		return new Vector2f(-y, x);
+	}
+	
+	// Returns the angle the vector creates with respect to x axis in radians
+	public float angle() {
+		return (float)Math.atan2(y, x);
+	}
+	
+	public static Vector2f polarToCartesian(float angle, float radius) {
+		return new Vector2f(
+				radius * (float)Math.cos(angle),
+				radius * (float)Math.sin(angle)
+		);
+	}
+	
+	@Override
+	public String toString() {
+		return String.format("(%d, %d)", x, y);
+	}
 }
