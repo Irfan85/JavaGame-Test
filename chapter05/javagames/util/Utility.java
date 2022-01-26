@@ -1,5 +1,8 @@
 package javagames.util;
 
+import java.awt.Graphics;
+import java.util.List;
+
 public class Utility {
 	
 	// ViewPort matrix converts world co-ordinate to screen co-ordinate
@@ -26,9 +29,33 @@ public class Utility {
 		
 		// Now, we will apply these transformation in the reverse order (First transformation and then scaling)
 		// Also we have to negate the translation factors to reverse the translation
-		Matrix3x3f reverseViewPortMatrix = Matrix3x3f.translate(tx, ty);
-		reverseViewPortMatrix = reverseViewPortMatrix.mul(Matrix3x3f.scale(sx, sy));
+		Matrix3x3f reverseViewPortMatrix = Matrix3x3f.translate(-tx, -ty);
+		reverseViewPortMatrix = reverseViewPortMatrix.mul(Matrix3x3f.scale(sx, -sy));
 		
 		return reverseViewPortMatrix;
 	}
+	
+	// Draws polygon using vector array
+	public static void drawPolygon(Graphics g, Vector2f[] polygon) {
+		// Draw lines from point s to point p
+		Vector2f p;
+		Vector2f s = polygon[polygon.length - 1];
+		
+		for (int i = 0; i < polygon.length; i++) {
+			p = polygon[i];
+			g.drawLine((int)s.x, (int)s.y, (int)p.x, (int)p.y);
+			s = p;
+		}
+	}
+	
+	// Draws polygon using vector list (ArrayList, LinkedList whatever)
+		public static void drawPolygon(Graphics g, List<Vector2f> polygon) {
+			// Draw lines from point s to point p
+			Vector2f s = polygon.get(polygon.size() - 1);
+			
+			for (Vector2f p : polygon) {
+				g.drawLine((int)s.x, (int)s.y, (int)p.x, (int)p.y);
+				s = p;
+			}
+		}
 }
